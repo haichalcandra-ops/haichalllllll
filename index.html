@@ -1,356 +1,325 @@
-html
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Saya</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Portofolio Saya</title>
     
-    <!-- Font Awesome untuk Ikon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tambahkan ikon dari Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- ==================== CSS ==================== -->
+    <style>
+        /* --- Gaya Umum --- */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
 
-    <!-- Google Fonts (Poppins) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        .container {
+            width: 85%;
+            margin: auto;
+            overflow: hidden;
+        }
 
-    <!-- CSS Kustom -->
-    <link rel="stylesheet" href="style.css">
+        h1, h2 {
+            color: #0056b3;
+            text-align: center;
+        }
+
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* --- Header & Navigasi --- */
+        .main-header {
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .main-nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .main-nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: #0056b3;
+        }
+
+        /* --- Bagian Tentang Saya --- */
+        #tentang-saya .about-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .about-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-img img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #0056b3;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        /* --- Bagian Keahlian & Prestasi --- */
+        .items-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .items-list li {
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-left: 5px solid #0056b3;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* --- Bagian GALERI FOTO (BARU!) --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow: hidden; /* Agar sudut gambar mengikuti sudut kotak */
+            text-align: left;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Agar foto tidak terdistorsi */
+        }
+
+        .gallery-item p {
+            padding: 15px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* --- Bagian Hubungi Saya --- */
+        #hubungi-saya .contact-info {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 15px;
+            color: #0056b3;
+            font-size: 20px;
+        }
+
+        /* --- Footer --- */
+        .main-footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* --- Agar Tampilan Bagus di HP --- */
+        @media (max-width: 768px) {
+            .main-header .container {
+                flex-direction: column;
+            }
+            .main-nav ul {
+                margin-top: 15px;
+            }
+            #tentang-saya .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- ==================== HEADER & NAVIGASI ==================== -->
+    <header class="main-header">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Nama Anda</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#beranda">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tentang">Tentang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#keahlian">Keahlian</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#prestasi">Prestasi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#kontak">Kontak</a>
-                    </li>
+            <div class="logo">Nama Saya</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#tentang-saya">Tentang</a></li>
+                    <li><a href="#keahlian">Keahlian</a></li>
+                    <li><a href="#prestasi">Prestasi</a></li>
+                    <li><a href="#galeri-foto">Galeri</a></li>
+                    <li><a href="#hubungi-saya">Hubungi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==================== SECTION 1: TENTANG SAYA ==================== -->
+        <section id="tentang-saya">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-img">
+                        <!-- Ganti 'LINK_FOTO_ANDA' dengan link foto Anda -->
+                        <img src="https://source.unsplash.com/random/400x400?portrait,teen" alt="Foto Profil">
+                    </div>
+                    <div class="about-text">
+                        <!-- ========== EDIT BAGIAN INI ========== -->
+                        <h1>Halo, Saya [Nama Lengkap]</h1>
+                        <p>Saya adalah siswa kelas [Kelas] di [Nama Sekolah]. Saya senang belajar tentang [sebutkan minat Anda, misal: komputer dan seni] dan suka mencoba hal-hal baru.</p>
+                        <p>Di luar jam sekolah, saya aktif di [kegiatan ekstrakurikuler Anda]. Menurut saya, belajar tidak hanya dari buku, tapi juga dari pengalaman dan bertemu orang baru.</p>
+                        <!-- ========== SELESAI EDIT ========== -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 2: KEAHLIAN SAYA ==================== -->
+        <section id="keahlian">
+            <div class="container">
+                <h2>Keahlian Saya</h2>
+                <ul class="items-list">
+                    <!-- ========== EDIT BAGIAN INI ========== -->
+                    <li>Menggunakan Microsoft Office (Word, PowerPoint) untuk tugas sekolah.</li>
+                    <li>Mendesain poster sederhana dengan aplikasi seperti Canva.</li>
+                    <li>Berbicara di depan umum untuk presentasi tugas.</li>
+                    <!-- Anda bisa tambah keahlian lain di sini -->
+                    <!-- ========== SELESAI EDIT ========== -->
                 </ul>
             </div>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Beranda / Hero Section -->
-    <section id="beranda" class="hero d-flex align-items-center text-center">
+        <!-- ==================== SECTION 3: PRESTASI SAYA ==================== -->
+        <section id="prestasi">
+            <div class="container">
+                <h2>Prestasi Saya</h2>
+                <ul class="items-list">
+                    <!-- ========== EDIT BAGIAN INI ========== -->
+                    <li>Juara 3 Lomba Cerdas Cermat tingkat Kabupaten (2023).</li>
+                    <li>Penyaji terbaik pada pameran proyek sains di sekolah (2022).</li>
+                    <li>Mendapatkan sertifikat kursus "Public Speaking" online (2023).</li>
+                    <!-- Anda bisa tambah prestasi lain di sini -->
+                    <!-- ========== SELESAI EDIT ========== -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 4: GALERI FOTO (BARU!) ==================== -->
+        <section id="galeri-foto">
+            <div class="container">
+                <h2>Galeri Kegiatan Saya</h2>
+                <div class="gallery-grid">
+                    <!-- ========== EDIT BAGIAN INI ========== -->
+                    <!-- Salin dan tempel blok <div class="gallery-item"> untuk menambah foto -->
+                    <div class="gallery-item">
+                        <!-- Ganti 'LINK_FOTO_KEGIATAN' dengan link foto Anda -->
+                        <img src="https://source.unsplash.com/random/400x300?team,meeting" alt="Kegiatan 1">
+                        <p>Rapat Panitia Acara Sekolah</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/400x300?presentation" alt="Kegiatan 2">
+                        <p>Sedang Presentasi di Kelas</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/400x300?outdoor,camping" alt="Kegiatan 3">
+                        <p>Kegiatan Pramuka di Alam Terbuka</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/400x300?library,books" alt="Kegiatan 4">
+                        <p>Belajar Bersama di Perpustakaan</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/400x300?sport,basketball" alt="Kegiatan 5">
+                        <p>Pertandingan Ekstrakurikuler Bola Basket</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://source.unsplash.com/random/400x300?art,painting" alt="Kegiatan 6">
+                        <p>Mengikuti Lomba Melukis</p>
+                    </div>
+                    <!-- ========== SELESAI EDIT ========== -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SECTION 5: HUBUNGI SAYA ==================== -->
+        <section id="hubungi-saya">
+            <div class="container">
+                <h2>Hubungi Saya</h2>
+                <div class="contact-info">
+                    <!-- ========== EDIT BAGIAN INI ========== -->
+                    <p><i class="fas fa-envelope"></i> email.kamu@example.com</p>
+                    <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+                    
+                    <!-- Kontak media sosial hanya pajangan -->
+                    <p><i class="fab fa-instagram"></i> @username_instagram_anda</p>
+                    <p><i class="fab fa-whatsapp"></i> +62 812-3456-7890</p>
+                    <!-- ========== SELESAI EDIT ========== -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="main-footer">
         <div class="container">
-            <h1 class="display-3 fw-bold">Halo, Saya <span class="auto-type"></span></h1>
-            <p class="lead my-4">Selamat datang di portofolio digital saya. Jelajahi perjalanan dan karya saya.</p>
-            <a href="#tentang" class="btn btn-primary btn-lg">Pelajari Lebih Lanjut</a>
+            <p>&copy; 2024 [Nama Lengkap Anda]. Portofolio Pribadi.</p>
         </div>
-    </section>
-
-    <!-- Tentang & Minat Section -->
-    <section id="tentang" class="section-padding">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <!-- GANTI dengan foto profil Anda -->
-                    <img src="https://via.placeholder.com/500" alt="Foto Profil" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="fw-bold">Tentang Saya</h2>
-                    <p class="text-muted">
-                        <!-- GANTI dengan deskripsi diri Anda -->
-                        Saya adalah seorang [Profesi Anda, misal: Pengembang Web / Desainer Grafis] yang penuh semangat. 
-                        Saya memiliki pengalaman selama [Jumlah Tahun] tahun dan sangat antusias dalam [bidang yang Anda minati].
-                    </p>
-                    <h3 class="h5 fw-bold mt-4">Minat Saya</h3>
-                    <div class="d-flex flex-wrap gap-2">
-                        <!-- GANTI dengan minat Anda -->
-                        <span class="badge bg-primary text-white p-2">Teknologi</span>
-                        <span class="badge bg-primary text-white p-2">Desain UI/UX</span>
-                        <span class="badge bg-primary text-white p-2">Fotografi</span>
-                        <span class="badge bg-primary text-white p-2">Musik</span>
-                        <span class="badge bg-primary text-white p-2">Olahraga</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Keahlian Section -->
-    <section id="keahlian" class="bg-light section-padding">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Keahlian Saya</h2>
-                <p class="text-muted">Berikut adalah beberapa teknologi dan kemampuan yang saya kuasai.</p>
-            </div>
-            <div class="row g-4">
-                <!-- Keahlian 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="fa-solid fa-code fa-3x text-primary mb-3"></i>
-                            <h5 class="card-title">Pengembangan Web</h5>
-                            <p class="card-text">Membangun website yang responsif dan modern dengan HTML, CSS, dan JavaScript.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Keahlian 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="fa-solid fa-palette fa-3x text-success mb-3"></i>
-                            <h5 class="card-title">Desain UI/UX</h5>
-                            <p class="card-text">Merancang antarmuka pengguna yang intuitif dan pengalaman pengguna yang menyenangkan.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Keahlian 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="fa-solid fa-database fa-3x text-info mb-3"></i>
-                            <h5 class="card-title">Manajemen Database</h5>
-                            <p class="card-text">Mengelola dan mengoptimalkan database seperti MySQL dan PostgreSQL.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tambahkan keahlian lainnya di sini -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Prestasi Section -->
-    <section id="prestasi" class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Prestasi</h2>
-                <p class="text-muted">Beberapa pencapaian yang saya banggakan.</p>
-            </div>
-            <div class="row g-4">
-                <!-- Prestasi 1 -->
-                <div class="col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-trophy text-warning me-2"></i>Juara 1 Lomba Coding Nasional</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Universitas Indonesia, 2023</h6>
-                            <p class="card-text">Berhasil menjadi juara pertama dalam kompetisi coding tingkat nasional dengan memecahkan tantangan algoritma kompleks.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Prestasi 2 -->
-                <div class="col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-certificate text-primary me-2"></i>Sertifikasi Profesional AWS</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Amazon Web Services, 2022</h6>
-                            <p class="card-text">Lulus dan mendapatkan sertifikasi sebagai Solutions Architect Associate dari AWS.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tambahkan prestasi lainnya di sini -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Kontak Section -->
-    <section id="kontak" class="bg-dark text-white section-padding">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-4">Hubungi Saya</h2>
-            <p class="mb-4">Saya terbuka untuk peluang kerja sama dan diskusi. Jangan ragu untuk menghubungi saya!</p>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <ul class="list-unstyled contact-info">
-                        <li class="mb-3">
-                            <i class="fas fa-envelope me-3"></i>
-                            <!-- GANTI dengan email Anda -->
-                            <a href="mailto:email.anda@example.com" class="text-white text-decoration-none">email.anda@example.com</a>
-                        </li>
-                        <li class="mb-3">
-                            <i class="fas fa-phone me-3"></i>
-                            <!-- GANTI dengan nomor telepon Anda -->
-                            <a href="tel:+628123456789" class="text-white text-decoration-none">+62 812-3456-789</a>
-                        </li>
-                        <li class="mb-4">
-                            <i class="fas fa-map-marker-alt me-3"></i>
-                            <!-- GANTI dengan lokasi Anda -->
-                            Jakarta, Indonesia
-                        </li>
-                    </ul>
-                    <!-- Tautan Media Sosial -->
-                    <div class="social-links">
-                        <!-- GANTI dengan tautan profil media sosial Anda -->
-                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-2x"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-github fa-2x"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-twitter fa-2x"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black text-white text-center py-3">
-        <p class="mb-0">&copy; 2024 Nama Anda. All Rights Reserved.</p>
     </footer>
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Typed.js untuk efek mengetik -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    
-    <script>
-        // Efek mengetik pada judul
-        let typed = new Typed('.auto-type', {
-            strings: ['Web Developer', 'UI/UX Designer', 'Creative Thinker'],
-            typeSpeed: 100,
-            backSpeed: 50,
-            loop: true
-        });
-    </script>
 
 </body>
 </html>
-
-
----
-
-### Kode CSS (style.css)
-
-css
-/* --- Pengaturan Global & Font --- */
-:root {
-    --primary-color: #0d6efd; /* Warna Bootstrap Primary */
-    --secondary-color: #6c757d; /* Warna Bootstrap Secondary */
-    --dark-color: #212529;     /* Warna Bootstrap Dark */
-    --light-color: #f8f9fa;   /* Warna Bootstrap Light */
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-}
-
-/* --- Pengaturan Section --- */
-.section-padding {
-    padding: 80px 0;
-}
-
-/* --- Navbar --- */
-.navbar {
-    background-color: rgba(33, 37, 41, 0.9); /* Transparan sedikit */
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-}
-
-.navbar-brand {
-    font-size: 1.5rem;
-}
-
-.nav-link {
-    font-weight: 400;
-    margin-left: 10px;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #adb5bd !important;
-}
-
-/* --- Hero Section (Beranda) --- */
-.hero {
-    height: 100vh; /* Memenuhi tinggi layar */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
-    color: white;
-    text-align: center;
-}
-
-/* GANTI dengan gambar background hero Anda */
-/* .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('path/to/your/image.jpg') no-repeat center center/cover;
-} */
-
-.hero h1 {
-    font-weight: 700;
-}
-
-.hero .lead {
-    font-size: 1.25rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* --- Card Styling (Untuk Keahlian & Prestasi) --- */
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.card-body i {
-    transition: color 0.3s ease;
-}
-
-.card:hover .card-body i.fa-code {
-    color: #e34c26 !important; /* Warna HTML5 */
-}
-
-.card:hover .card-body i.fa-palette {
-    color: #61dafb !important; /* Warna React */
-}
-
-.card:hover .card-body i.fa-database {
-    color: #336791 !important; /* Warna PostgreSQL */
-}
-
-/* --- Contact Section --- */
-.contact-info li {
-    font-size: 1.1rem;
-}
-
-.contact-info a {
-    transition: color 0.3s ease;
-}
-
-.contact-info a:hover {
-    color: var(--primary-color) !important;
-}
-
-.social-links a {
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--primary-color) !important;
-    transform: scale(1.1);
-}
-
-/* --- Responsive Design --- */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    .section-padding {
-        padding: 60px 0;
-    }
-}
-
-
+                        
