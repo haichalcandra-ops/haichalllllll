@@ -3,57 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Persib Bandung - Website Resmi</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome untuk ikon sosial media -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <title>Muhamad Rifki Fauzan</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0a74f7;
+            color: white;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 80px;
+            align-items: center;
+            background: white;
+            color: black;
+        }
+
+        nav .logo {
+            font-size: 22px;
+            font-weight: 700;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li {
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 80px;
+            gap: 80px;
+        }
+
+        /* Foto bulat */
+        .photo-wrapper {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Text */
+        .hero-text h1 {
+            font-size: 55px;
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            width: 550px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .btn-red {
+            background: #e63946;
+            color: white;
+        }
+
+        .btn-blue {
+            background: #19d3f3;
+            color: black;
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- Header (Navbar) -->
-    <header class="navbar">
-        <div class="logo">
-            <img src="assets/logo.png" alt="Persib Bandung Logo" width="50">
-            <h1>Persib Bandung</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#team">Pemain</a></li>
-                <li><a href="#matches">Pertandingan</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">🎓 IN</div>
+        <ul>
+            <li>Beranda</li>
+            <li>Tentang</li>
+            <li>Prestasi</li>
+            <li>Kontak</li>
+        </ul>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-text">
-            <h2>Selamat Datang di Website Resmi Persib Bandung</h2>
-            <p>Tim sepak bola kebanggaan Bandung dengan prestasi dan sejarah yang gemilang!</p>
+    <div class="hero">
+        <!-- Foto -->
+        <div class="photo-wrapper">
+            <img src="foto.jpg" alt="Foto Profil">
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <h2>Tentang Persib Bandung</h2>
-        <p>Persib Bandung adalah salah satu klub sepak bola terbesar di Indonesia, yang berdiri sejak 1933. Klub ini terkenal dengan penggemar setia yang dikenal dengan nama Bobotoh, yang selalu mendukung tim di setiap pertandingan.</p>
-    </section>
+        <!-- Teks -->
+        <div class="hero-text">
+            <h1>Muhamad Rifki fauzan</h1>
+            <h3>Siswa Kelas XII-3 SMAN 10 Garut</h3>
+            <p>
+            Perkenalkan saya Muhamad Rifki Fauzan siswa SMAN 10 GARUT \ 
+            </p>
 
-    <!-- Team Section -->
-    <section id="team" class="section">
-        <h2>Pemain Utama</h2>
-        <div class="team-members">
-            <div class="team-member card">
-                <img src="https://via.placeholder.com/200x200" alt="Pemain 1">
-                <div class="card-body">
-                    <h5>Nama Pemain 1</h5>
-                    <p>Posisi: Gelandang</p>
-                </div>
-            </div>
-            <div class="team-member card">
-                <img src="https://via.placeholder.com/200x200" alt="Pemain 2">
-                <div class="card-body">
-                    <h5>Nama Pemain 2</h5>
-                    <p>Posisi: Pe
+            <a class="btn btn-red">🏆 Lihat Prestasi</a>
+            <a class="btn btn-blue">✉️ Hubungi Saya</a>
+        </div>
+    </div>
+
+</body>
+</html>
