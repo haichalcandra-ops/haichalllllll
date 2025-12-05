@@ -3,35 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dunia Boboiboy - Teman Sejati</title>
+    <title>Portofolio Saya - Haichal Candra A</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-    <!-- Google Fonts (Orbitron & Poppins) -->
+    <!-- Google Fonts (Poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS Kustom -->
     <style>
         :root {
-            --primary-color: #FFD700; /* Kuning Emas */
-            --secondary-color: #00BFFF; /* Biru Langit */
-            --tertiary-color: #FF4500; /* Oranye Lava */
-            --quaternary-color: #32CD32; /* Hijau Daun */
-            --dark-bg: #0a0a0a;
-            --card-bg: #1a1a1a;
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--dark-bg);
-            color: #ffffff;
-            overflow-x: hidden;
+            padding-top: 60px;
         }
 
         /* Smooth Scrolling */
@@ -39,210 +32,188 @@
             scroll-behavior: smooth;
         }
 
-        /* Navbar */
-        .navbar {
-            background-color: rgba(10, 10, 10, 0.8) !important;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .navbar-brand {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 1.8rem;
-            color: var(--primary-color) !important;
-            text-shadow: 0 0 10px var(--primary-color);
-        }
-
-        .nav-link {
-            color: #ffffff !important;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--secondary-color) !important;
-        }
-
         /* Hero Section */
         .hero-section {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/random/1920x1080/?anime,superhero,energy') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/random/1600x900/?technology,code') no-repeat center center/cover;
+            color: white;
+            min-height: 80vh; 
             display: flex;
             align-items: center;
-            text-align: center;
-            position: relative;
         }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .profile-img {
+            max-width: 250px;
             width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4.5rem;
-            font-weight: 900;
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 20px rgba(255, 215, 0, 0.7); }
-            to { text-shadow: 0 0 30px rgba(255, 215, 0, 1), 0 0 40px rgba(255, 215, 0, 0.5); }
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: #cccccc;
-        }
-
-        .btn-hero {
-            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-            border: none;
-            padding: 12px 30px;
+        .hero-section h1 {
             font-weight: 700;
-            border-radius: 50px;
-            margin-top: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .btn-hero:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 191, 255, 0.4);
+        .hero-section p {
+            font-weight: 300;
+            font-size: 1.2rem;
         }
 
         /* Section Styling */
         .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 2.5rem;
+            font-weight: 600;
             margin-bottom: 50px;
             position: relative;
-            text-align: center;
+            padding-bottom: 15px;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-            border-radius: 2px;
+            background-color: var(--primary-color);
         }
 
         .section-padding {
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
-        /* Characters Section */
-        .character-card {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 30px;
-            cursor: pointer;
+        /* About Section */
+        .about-img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .character-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0,191,255,0.3);
-        }
-
-        .character-card img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .character-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .character-card .card-body {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .character-card .card-title {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        /* Powers Section */
-        .powers-section {
-            background-color: var(--card-bg);
+        /* Skills Section */
+        .skills-section {
+            background-color: var(--light-color);
         }
         
-        .power-item {
-            text-align: center;
-            padding: 20px;
+        .skill-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
         }
 
-        .power-item i {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            display: block;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .power-item:hover i {
-            transform: translateY(-10px) scale(1.1);
-        }
-
-        .power-item:nth-child(1) i { color: var(--secondary-color); }
-        .power-item:nth-child(2) i { color: var(--tertiary-color); }
-        .power-item:nth-child(3) i { color: var(--quaternary-color); }
-        .power-item:nth-child(4) i { color: var(--primary-color); }
-
-        .power-item h5 {
+        .skill-box h4 {
             font-weight: 600;
+            margin-bottom: 20px;
         }
 
-        /* Footer */
-        footer {
-            background-color: #050505;
-            color: #888;
-            text-align: center;
-            padding: 30px 0;
-            border-top: 1px solid #222;
+        .skill-badge {
+            font-size: 0.9rem;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-weight: 400;
         }
+
+        /* --- Gallery Section (Statis) --- */
+        .gallery-item {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- CSS untuk overlay dan hover SUDAH DIHAPUS --- */
+
+        /* Achievements Section (Tanpa Animasi) */
+        .simple-list {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .simple-list li {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .simple-list li h5 {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .simple-list li p {
+            margin-bottom: 0;
+            color: var(--secondary-color);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section .section-title::after {
+            background-color: white;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        /* --- Social Links DIHAPUS --- */
+        
+        /* --- Footer DIHAPUS --- */
 
     </style>
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">BOOBOIBOY</a>
+            <a class="navbar-brand fw-bold" href="#">Haichal Candra</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#karakter">Karakter</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#kekuatan">Kekuatan</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#beranda">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#keahlian">Keahlian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeri">Galeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#prestasi">Prestasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -250,55 +221,60 @@
 
     <!-- Hero Section -->
     <section id="beranda" class="hero-section">
-        <div class="container hero-content">
-            <h1 class="hero-title">BOOBOIBOY</h1>
-            <p class="hero-subtitle">Pahlawan Elemental Penjaga Bumi</p>
-            <a href="#karakter" class="btn btn-primary btn-hero">Jelajahi Dunianya</a>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 text-center mb-4 mb-lg-0">
+                    <!-- GANTI DENGAN FOTO ANDA -->
+                    <img src="ht.jpg" alt="Foto Profil Haichal Candra" class="profile-img">
+                </div>
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h1>Halo, Saya <span style="color: var(--primary-color);">Haichal Candra</span></h1>
+                    <p class="lead">Content Creator & Pelajar</p>
+                    <p>Saya adalah seorang pelajar SMAN 10 Garut yang masih duduk di bangku kelas 3. Saya memiliki ketertarikan pada dunia digital dan entertainment, serta senang berbagi cerita melalui konten.</p>
+                    <a href="#kontak" class="btn btn-primary btn-lg mt-3">Hubungi Saya</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Characters Section -->
-    <section id="karakter" class="section-padding">
+    <!-- About Section -->
+    <section id="tentang" class="section-padding">
         <div class="container">
-            <h2 class="section-title">Karakter Utama</h2>
+            <h2 class="text-center section-title">Tentang Saya</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="hg.jpg" alt="Tentang Saya" class="about-img">
+                </div>
+                <div class="col-lg-6">
+                    <p>Saya adalah seorang pelajar yang masih duduk di bangku sma kelas 3 bertepatan di SMAN 10 GARUT. Saya percaya bahwa dengan terus belajar dan menekuni bidang yang diminati, maka dengan izin Allah saya akan berhasil.</p>
+                    <p>Saya suka berlibur dan menikmati makanan khas daerah.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="keahlian" class="section-padding skills-section">
+        <div class="container">
+            <h2 class="text-center section-title">Keahlian Saya</h2>
             <div class="row">
-                <!-- Karakter 1 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="character-card">
-                        <img src="loba.jpg" alt="Boboiboy">
-                        <div class="card-body">
-                            <h5 class="card-title">Boboiboy</h5>
-                            <p class="card-text">Pemegang kekuatan Elemental untuk melindungi Bumi dari ancaman alien.</p>
+                <div class="col-lg-6 mb-4">
+                    <div class="skill-box text-center">
+                        <h4>Public Speaking</h4>
+                        <div>
+                            <span class="badge bg-primary skill-badge">Komunikasi Efektif</span>
+                            <span class="badge bg-success skill-badge">Kerja Sama Tim</span>
+                            <span class="badge bg-info skill-badge">Manajemen Waktu</span>
                         </div>
                     </div>
                 </div>
-                <!-- Karakter 2 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="character-card">
-                        <img src="hg.jpg" alt="Ochobot">
-                        <div class="card-body">
-                            <h5 class="card-title">Ochobot</h5>
-                            <p class="card-text">Robot sfera pertama yang menjadi sahabat setia Boboiboy.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Karakter 3 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="character-card">
-                        <img src="hhhh.jpg" alt="Gopal">
-                        <div class="card-body">
-                            <h5 class="card-title">Gopal</h5>
-                            <p class="card-text">Sahabat Boboiboy dengan kemampuan mengubah makanan.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Karakter 4 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="character-card">
-                        <img src="ht.jpg" alt="Ying">
-                        <div class="card-body">
-                            <h5 class="card-title">Ying</h5>
-                            <p class="card-text">Sahabat Boboiboy yang memiliki kekuatan fusi.</p>
+                <div class="col-lg-6 mb-4">
+                    <div class="skill-box text-center">
+                        <h4>Content Creation</h4>
+                        <div>
+                            <span class="badge bg-danger skill-badge">Video Editing</span>
+                            <span class="badge bg-warning text-dark skill-badge">Mukbang</span>
+                            <span class="badge bg-primary skill-badge">Storytelling</span>
                         </div>
                     </div>
                 </div>
@@ -306,41 +282,78 @@
         </div>
     </section>
 
-    <!-- Powers Section -->
-    <section id="kekuatan" class="section-padding powers-section">
+    <!-- Gallery Section -->
+    <section id="galeri" class="section-padding">
         <div class="container">
-            <h2 class="section-title">Kekuatan Elemental</h2>
+            <h2 class="text-center section-title">Galeri Saya</h2>
             <div class="row">
-                <div class="col-lg-3 col-md-6 power-item">
-                    <i class="bi bi-tsunami"></i>
-                    <h5>Air</h5>
-                    <p>Mengendalikan air dan es.</p>
+                <!-- Ganti src dengan URL foto Anda -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="hy.jpg" alt="Foto Makanan 1">
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 power-item">
-                    <i class="bi bi-fire"></i>
-                    <h5>Api</h5>
-                    <p>Memanipulasi api dan panas.</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="lobaft.jpg" alt="Foto Event 1">
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 power-item">
-                    <i class="bi bi-tornado"></i>
-                    <h5>Tanah & Angin</h5>
-                    <p>Mengendalikan tanah dan angin.</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="hg.jpg" alt="Foto Pidato 1">
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 power-item">
-                    <i class="bi bi-lightning-charge-fill"></i>
-                    <h5>Petir</h5>
-                    <p>Kekuatan petir yang dahsyat.</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="hhhh.jpg" alt="Foto Liburan 1">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="ht.jpg" alt="Foto Editing 1">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item">
+                        <img src="lobaft.jpg" alt="Foto Teman 1">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Achievements Section -->
+    <section id="prestasi" class="section-padding">
         <div class="container">
-            <p>&copy; 2025 Dunia Boboiboy. Dibuat dengan <i class="bi bi-heart-fill text-danger"></i> untuk penggemar.</p>
+            <h2 class="text-center section-title">Prestasi & Pengalaman</h2>
+            <ul class="simple-list">
+                <li>
+                    <h5>Juara 1 Pidato tingkat Kecamatan</h5>
+                    <p>Prestasi saat saya masih duduk di bangku Sekolah Dasar.</p>
+                </li>
+                <li>
+                    <h5>Crew Event Organizer di Athena Grup</h5>
+                    <p>Berpengalaman dalam tim dan mampu menjalankan tugas dengan baik.</p>
+                </li>
+                <li>
+                    <h5>Ranking 1 di Kelas</h5>
+                    <p>Mencapai peringkat terbaik di kelas selama beberapa semester berturut-turut.</p>
+                </li>
+            </ul>
         </div>
-    </footer>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="section-padding contact-section">
+        <div class="container">
+            <h2 class="text-center section-title">Hubungi Saya</h2>
+            <div class="contact-info">
+                <p>haichalcandra@gmail.com</p>
+                <p>083844165597</p>
+                <p>Garut, Indonesia</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
