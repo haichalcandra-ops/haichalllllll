@@ -3,313 +3,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
+    <title>Portofolio Saya - Haichal Candra A</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Tambahkan ikon dari Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- ==================== CSS ==================== -->
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Kustom -->
     <style>
-        /* --- Gaya Umum --- */
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            padding-top: 60px;
         }
 
-        .container {
-            width: 85%;
-            margin: auto;
-            overflow: hidden;
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
         }
 
-        h1, h2 {
-            color: #0056b3;
-            text-align: center;
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/random/1600x900/?technology,code') no-repeat center center/cover;
+            color: white;
+            min-height: 80vh; 
+            display: flex;
+            align-items: center;
         }
 
-        section {
-            padding: 40px 0;
-            border-bottom: 1px solid #ddd;
+        .profile-img {
+            max-width: 250px;
+            width: 100%;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero-section h1 {
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-weight: 600;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* About Section */
+        .about-img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background-color: var(--light-color);
         }
         
-        section:last-of-type {
-            border-bottom: none;
+        .skill-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
         }
 
-        /* --- Header & Navigasi --- */
-        .main-header {
-            background: #fff;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .skill-box h4 {
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
-        .main-header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .skill-badge {
+            font-size: 0.9rem;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-weight: 400;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .main-nav ul {
-            margin: 0;
-            padding: 0;
+        /* Achievements Section (Tanpa Animasi) */
+        .simple-list {
             list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .main-nav ul li {
-            display: inline;
-            margin-left: 20px;
+        .simple-list li {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+            border-left: 5px solid var(--primary-color);
         }
 
-        .main-nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            transition: color 0.3s ease;
+        .simple-list li h5 {
+            font-weight: 600;
+            margin-bottom: 5px;
         }
 
-        .main-nav a:hover {
-            color: #0056b3;
+        .simple-list li p {
+            margin-bottom: 0;
+            color: var(--secondary-color);
         }
 
-        /* --- Bagian Tentang Saya --- */
-        #tentang-saya .about-content {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .about-img {
-            flex: 1;
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--dark-color);
+            color: white;
             text-align: center;
         }
 
-        .about-img img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #0056b3;
+        .contact-section .section-title::after {
+            background-color: white;
         }
 
-        .about-text {
-            flex: 2;
-        }
-
-        /* --- Bagian Keahlian & Prestasi --- */
-        .items-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .items-list li {
-            background: #fff;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-left: 5px solid #0056b3;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        /* --- Bagian GALERI FOTO (BARU!) --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            overflow: hidden; /* Agar sudut gambar mengikuti sudut kotak */
-            text-align: left;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover; /* Agar foto tidak terdistorsi */
-        }
-
-        .gallery-item p {
-            padding: 15px;
-            margin: 0;
-            font-weight: bold;
-        }
-
-        /* --- Bagian Hubungi Saya --- */
-        #hubungi-saya .contact-info {
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .contact-info p {
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
         }
 
-        .contact-info i {
-            margin-right: 15px;
-            color: #0056b3;
-            font-size: 20px;
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        /* --- Footer --- */
-        .main-footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
+        .contact-info a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            font-size: 2rem;
+            margin: 0 15px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1d20;
+            color: var(--secondary-color);
             padding: 20px 0;
+            text-align: center;
         }
 
-        /* --- Agar Tampilan Bagus di HP --- */
-        @media (max-width: 768px) {
-            .main-header .container {
-                flex-direction: column;
-            }
-            .main-nav ul {
-                margin-top: 15px;
-            }
-            #tentang-saya .about-content {
-                flex-direction: column;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- ==================== HEADER & NAVIGASI ==================== -->
-    <header class="main-header">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <div class="logo">Haichal Candra A</div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#tentang-saya">Tentang</a></li>
-                    <li><a href="#keahlian">Keahlian</a></li>
-                    <li><a href="#prestasi">Prestasi</a></li>
-                    <li><a href="#galeri-foto">Galeri</a></li>
-                    <li><a href="#hubungi-saya">Hubungi</a></li>
+            <a class="navbar-brand fw-bold" href="#">Haichal Candra</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#beranda">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#keahlian">Keahlian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#prestasi">Prestasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
                 </ul>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <!-- ==================== SECTION 1: TENTANG SAYA ==================== -->
-        <section id="tentang-saya">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-img">
-                        <!-- Ganti 'LINK_FOTO_ANDA' dengan link foto Anda -->
-                        <img src="ht.jpg" alt="Foto Profil">
-                    </div>
-                    <div class="about-text">
-                        <!-- ========== EDIT BAGIAN INI ========== -->
-                        <h1>Haallawww, nama saya haichal</h1>
-                        <p>Saya adalah siswa kelas XII-3 di SMAN 10 GARUT. Saya senang belajar tentang dunia entertaiment dan dua bisnis>
-                        <p>Di luar jam sekolah, saya aktif di Irma, Pramuka, PMR. Menurut saya, belajar tidak hanya dari buku, tapi juga dari pengalaman dan bertemu orang baru.</p>
-                        <!-- ========== SELESAI EDIT ========== -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== SECTION 2: KEAHLIAN SAYA ==================== -->
-        <section id="keahlian">
-            <div class="container">
-                <h2>Keahlian Saya</h2>
-                <ul class="items-list">
-                    <!-- ========== EDIT BAGIAN INI ========== -->
-                    <li>Public Speaking.</li>
-                    <li>Mukbang.</li>
-                    <li>Editing Video.</li>
-                    
-                    <!-- ========== SELESAI EDIT ========== -->
-                </ul>
-            </div>
-        </section>
-
-        <!-- ==================== SECTION 3: PRESTASI SAYA ==================== -->
-        <section id="prestasi">
-            <div class="container">
-                <h2>Prestasi Saya</h2>
-                <ul class="items-list">
-                    <!-- ========== EDIT BAGIAN INI ========== -->
-                    <li>Juara 1 Pidato Tingkat Kecamatan.</li>
-                    <li>Juara 1 Pidato Di Mdt.Al- Junaediyah.</li>
-                    <li>Rangking 1 Di SDN 02 Cibatu.</li>
-                    
-                    <!-- ========== SELESAI EDIT ========== -->
-                </ul>
-            </div>
-        </section>
-
-        <!-- ==================== SECTION 4: GALERI FOTO (BARU!) ==================== -->
-        <section id="galeri-foto">
-            <div class="container">
-                <h2>Galeri Kegiatan Saya</h2>
-                <div class="gallery-grid">
-                    <!-- ========== EDIT BAGIAN INI ========== -->
-                    <!-- Salin dan tempel blok <div class="gallery-item"> untuk menambah foto -->
-                    <div class="gallery-item">
-                        <!-- Ganti 'ht.jpg' dengan link foto Anda
-                    </div>
-                        
-                    <div class="gallery-item">
-                        <img src="hg.jpg" alt="Kegiatan 3">
-                        <p></p>
-                    </div>
-                        <img src="hg.jpg"alt
-
-                        
-                        
-                        
-                    </div>
-                    </div>
-                    <!-- ========== SELESAI EDIT ========== -->
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== SECTION 5: HUBUNGI SAYA ==================== -->
-        <section id="hubungi-saya">
-            <div class="container">
-                <h2>Hubungi Saya</h2>
-                <div class="contact-info">
-                    <!-- ========== EDIT BAGIAN INI ========== -->
-                    <p><i class="fas fa-envelope"></i> haichalcandra@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
-                    
-                    <!-- Kontak media sosial hanya pajangan -->
-                    <p><i class="fab fa-instagram"></i> @haichallc</p>
-                    <p><i class="fab fa-whatsapp"></i> +62 81646982874</p>
-                    <!-- ========== SELESAI EDIT ========== -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="main-footer">
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-section">
         <div class="container">
-            <p>&copy; 2025 haichal c. Portofolio Pribadi.</p>
+            <div class="row align-items-center">
+                <div class="col-lg-5 text-center mb-4 mb-lg-0">
+                    <!-- GANTI DENGAN FOTO ANDA -->
+                    <img src="https://source.unsplash.com/random/400x400/?portrait,professional" alt="Foto Profil Haichal Candra" class="profile-img">
+                </div>
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h1>Halo, Saya <span style="color: var(--primary-color);">Haichal Candra</span></h1>
+                    <p class="lead">Content Creator & Pelajar</p>
+                    <p>Saya adalah seorang pelajar SMAN 10 Garut yang masih duduk di bangku kelas 3. Saya memiliki ketertarikan pada dunia digital dan entertainment, serta senang berbagi cerita melalui konten.</p>
+                    <a href="#kontak" class="btn btn-primary btn-lg mt-3">Hubungi Saya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="section-padding">
+        <div class="container">
+            <h2 class="text-center section-title">Tentang Saya</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://source.unsplash.com/random/600x400/?profile,person" alt="Tentang Saya" class="about-img">
+                </div>
+                <div class="col-lg-6">
+                    <p>Saya adalah seorang pelajar yang memiliki cita-cita yang terus berkembang. Saya percaya bahwa dengan terus belajar dan menekuni bidang yang diminati, maka dengan izin Allah saya akan berhasil.</p>
+                    <p>Di luar aktivitas sekolah, saya senang berlibur sambil menikmati makanan khas daerah dan berbaginya kepada orang lain.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="keahlian" class="section-padding skills-section">
+        <div class="container">
+            <h2 class="text-center section-title">Keahlian Saya</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="skill-box text-center">
+                        <h4><i class="bi bi-megaphone-fill"></i> Public Speaking</h4>
+                        <div>
+                            <span class="badge bg-primary skill-badge">Komunikasi Efektif</span>
+                            <span class="badge bg-success skill-badge">Kerja Sama Tim</span>
+                            <span class="badge bg-info skill-badge">Manajemen Waktu</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="skill-box text-center">
+                        <h4><i class="bi bi-camera-reels-fill"></i> Content Creation</h4>
+                        <div>
+                            <span class="badge bg-danger skill-badge">Video Editing</span>
+                            <span class="badge bg-warning text-dark skill-badge">Mukbang</span>
+                            <span class="badge bg-primary skill-badge">Storytelling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="prestasi" class="section-padding">
+        <div class="container">
+            <h2 class="text-center section-title">Prestasi & Pengalaman</h2>
+            <ul class="simple-list">
+                <li>
+                    <h5><i class="bi bi-trophy-fill text-warning"></i> Juara 1 Pidato tingkat Kecamatan</h5>
+                    <p><i class="bi bi-calendar3"></i> Prestasi saat saya masih duduk di bangku Sekolah Dasar.</p>
+                </li>
+                <li>
+                    <h5><i class="bi bi-briefcase-fill text-primary"></i> Crew Event Organizer di Athena Grup</h5>
+                    <p><i class="bi bi-calendar3"></i> Berpengalaman dalam tim dan mampu menjalankan tugas dengan baik.</p>
+                </li>
+                <li>
+                    <h5><i class="bi bi-book-fill text-success"></i> Ranking 1 di Kelas</h5>
+                    <p><i class="bi bi-calendar3"></i> Mencapai peringkat terbaik di kelas selama beberapa semester berturut-turut.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="section-padding contact-section">
+        <div class="container">
+            <h2 class="text-center section-title">Hubungi Saya</h2>
+            <div class="contact-info">
+                <p><i class="bi bi-envelope-fill"></i> <a href="mailto:emailanda@example.com">emailanda@example.com</a></p>
+                <p><i class="bi bi-telephone-fill"></i> <a href="tel:+628123456789">+62 812-3456-789</a></p>
+                <p><i class="bi bi-geo-alt-fill"></i> Garut, Indonesia</p>
+                
+                <div class="social-links">
+                    <!-- GANTI # dengan link profil Anda -->
+                    <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="bi bi-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Portofolio Haichal Candra. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-                        
+
+       
+        
+        
+            
